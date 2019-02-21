@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SalesLib.Model
 {
-    interface ICostumer
+    interface ICustomer
     {
         string Name { get; }
         string Telephone { get; }
