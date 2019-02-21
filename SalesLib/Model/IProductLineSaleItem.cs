@@ -8,7 +8,7 @@ namespace SalesLib.Model
 {
     public interface IProductLineSaleItem
     {
-        IProduct product { get; }
+        IProduct Product { get; }
         int Quantity { get; }
         double Price { get; }
         int LineID { get; }
