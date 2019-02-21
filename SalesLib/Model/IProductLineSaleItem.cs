@@ -12,5 +12,7 @@ namespace SalesLib.Model
         int Quantity { get; }
         double Price { get; }
         int LineID { get; }
+
+        void ApplyDiscount(double amount);
     }
 }
