@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Domain\ProductSaleLineItem.cs" />
+    <Compile Include="Domain\Product.cs" />
     <Compile Include="Model\ICustomer.cs" />
     <Compile Include="Model\IOrder.cs" />
     <Compile Include="Model\IProduct.cs" />

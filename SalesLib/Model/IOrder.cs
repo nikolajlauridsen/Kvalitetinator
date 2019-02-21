@@ -16,5 +16,7 @@ namespace SalesLib.Model
 
         int OrderID { get; }
         Boolean Picked { get; }
+
+        List<IProductLineSaleItem> GetProductLineSaleItems();
     }
 }
