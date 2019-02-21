@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Domain\Product.cs" />
+    <Compile Include="Domain\Customer.cs" />
+    <Compile Include="Domain\ProductSaleLineItem.cs" />
     <Compile Include="Model\ICustomer.cs" />
     <Compile Include="Model\IOrder.cs" />
     <Compile Include="Model\IProduct.cs" />
@@ -51,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
