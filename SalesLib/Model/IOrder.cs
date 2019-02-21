@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SalesLib.Model
 {
-    interface IOrder
+    public interface IOrder
     {
         ICustomer Customer { get; }
         DateTime DeliverDate { get; }

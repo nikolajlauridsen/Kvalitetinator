@@ -45,6 +45,7 @@
     <Compile Include="Model\ICustomer.cs" />
     <Compile Include="Model\IOrder.cs" />
     <Compile Include="Model\IProduct.cs" />
+    <Compile Include="Model\IProductLineSaleItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

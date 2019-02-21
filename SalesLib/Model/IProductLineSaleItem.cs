@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SalesLib.Model
 {
-    public interface IProduct
+    public interface IProductLineSaleItem
     {
-        string Name { get; }
-        string Description { get; }
+        IProduct product { get; }
+        int Quantity { get; }
         double Price { get; }
-        int MinInStock { get; }
+        int LineID { get; }
     }
 }
