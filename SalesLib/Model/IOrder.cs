@@ -8,6 +8,13 @@ namespace SalesLib.Model
 {
     interface IOrder
     {
+        ICustomer Customer { get; }
         DateTime DeliverDate { get; }
+        DateTime OrderDate { get; }
+
+        // TODO: Add List<ProductSaleLineItem>
+
+        int OrderID { get; }
+        Boolean Picked { get; }
     }
 }
