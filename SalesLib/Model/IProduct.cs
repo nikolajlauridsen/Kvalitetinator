@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SalesLib.Model
 {
-    interface IProduct
+    public interface IProduct
     {
         string Name { get; }
         string Description { get; }

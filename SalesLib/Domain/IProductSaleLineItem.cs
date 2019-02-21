@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SalesLib.Model
+namespace SalesLib.Domain
 {
-    public interface IOrder
+    public interface IProductSaleLineItem
     {
-        DateTime DeliverDate { get; }
+        
     }
 }
