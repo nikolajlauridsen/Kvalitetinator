@@ -21,11 +21,6 @@ namespace SalesLib.Domain
 
         public bool Picked { get; }
 
-        public List<IProductLineSaleItem> GetProductLineSaleItems()
-        {
-            throw new NotImplementedException();
-        }
-
         public Order(ICustomer customer, DateTime deliveryDate)
         {
             Customer = customer;
@@ -33,9 +28,18 @@ namespace SalesLib.Domain
 
         }
 
+        public List<IProductLineSaleItem> GetProductLineSaleItems()
+        {
+            List<IProductLineSaleItem> items = new List<IProductLineSaleItem>();
+
+            items = ProductItems.ToList();
+
+            return items;
+        }
+
         public void AddProductLineSaleItem(IProductLineSaleItem productLineSaleItem)
         {
-
+            ProductItems.Add(productLineSaleItem);
         }
     }
 }
