@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using SalesLib.Application;
+using SalesLib.Model;
+
 namespace Kvalitetinator
 {
     /// <summary>
@@ -23,16 +26,59 @@ namespace Kvalitetinator
         public MainWindow()
         {
             InitializeComponent();
+            foreach (IOrder order in Controller.Instance.GetActiveOrders())
+            {
+                OrderList.Items.Add(new OrderItem
+                {
+                    OrderID = order.OrderID.ToString(),
+                    Customer = order.Customer.Name,
+                    Delivery = order.DeliveryDate.ToString()
+                });
+            }
+
+            ActiveRadio.Checked += LoadActiveOrders;
+            InactiveRadio.Checked += LoadInactiveOrders;
+
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
 
         }
+
+        private void LoadActiveOrders(object sender, EventArgs e)
+        {
+            OrderList.Items.Clear();
+            foreach (IOrder order in Controller.Instance.GetActiveOrders()) {
+                OrderList.Items.Add(new OrderItem {
+                    OrderID = order.OrderID.ToString(),
+                    Customer = order.Customer.Name,
+                    Delivery = order.DeliveryDate.ToString()
+                });
+            }
+        }
+
+        private void LoadInactiveOrders(object sender, EventArgs e)
+        {
+            OrderList.Items.Clear();
+            foreach (IOrder order in Controller.Instance.GetInactiveOrders()) {
+                OrderList.Items.Add(new OrderItem {
+                    OrderID = order.OrderID.ToString(),
+                    Customer = order.Customer.Name,
+                    Delivery = order.DeliveryDate.ToString()
+                });
+            }
+        }
+    }
+
+    public class OrderItem
+    {
+        public string OrderID;
+        public string Customer;
+        public string Delivery;
     }
 }

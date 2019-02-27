@@ -17,7 +17,9 @@ namespace SalesLib.Persistence
         void ActivateOrder(int orderID);
 
         IOrder GetActiveOrder(int orderID);
+        List<IOrder> GetActiveOrders();
         IOrder GetInactiveOrder(int orderID);
+        List<IOrder> GetInactiveOrders();
         ICustomer GetCustomer(int customerID);
         ICustomer GetCustomer(string telephone);
 

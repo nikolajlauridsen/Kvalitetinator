@@ -71,6 +71,11 @@ namespace SalesLib.Persistence
             return null;
         }
 
+        public List<IOrder> GetActiveOrders()
+        {
+            return activeOrders;
+        }
+
         public IOrder GetInactiveOrder(int orderID)
         {
             foreach (IOrder order in inactiveOrders) {
@@ -79,6 +84,11 @@ namespace SalesLib.Persistence
                 }
             }
             return null;
+        }
+
+        public List<IOrder> GetInactiveOrders()
+        {
+            return inactiveOrders;
         }
 
         public ICustomer GetCustomer(string telephone)

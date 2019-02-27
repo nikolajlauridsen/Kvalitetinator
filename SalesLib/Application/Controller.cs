@@ -10,9 +10,29 @@ namespace SalesLib.Application
 {
     public class Controller
     {
+        private static Controller _instance;
+
+        public static Controller Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Controller();
+                }
+
+                return _instance;
+            }
+        }
+
         OrderRepo orderRepo = new OrderRepo();
         ProductRepo productRepo = new ProductRepo();
         CustomerRepo customerRepo = new CustomerRepo();
+
+        private Controller()
+        {
+
+        }
 
         public bool CreateCustomer(string name, string adress, string zip, string town, string telephone)
         {
@@ -32,6 +52,16 @@ namespace SalesLib.Application
         {
             order.AddProductLineSaleItem(productRepo.GetProduct(productId),quantity);
 
+        }
+
+        public List<IOrder> GetActiveOrders()
+        {
+            return orderRepo.GetActiveOrders();
+        }
+
+        public List<IOrder> GetInactiveOrders()
+        {
+            return orderRepo.GetInactiveOrders();
         }
     }
 }
