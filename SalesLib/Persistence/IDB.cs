@@ -9,6 +9,7 @@ namespace SalesLib.Persistence
 {
     public interface IDB
     {
+        IDB Instance { get;}
         int CreateCustomer(ICustomer customer);
         int CreateOrder(IOrder order);
 

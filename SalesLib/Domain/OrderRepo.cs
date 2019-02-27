@@ -10,7 +10,8 @@ namespace SalesLib.Domain
 {
     public class OrderRepo
     {
-        private IDB db = new FakeDB();
+        private IDB db = FakeDB.Instance;
+
         public int CreateOrder(ICustomer customer, DateTime deliveryDate)
         {
             IOrder order = new Order(customer, deliveryDate);

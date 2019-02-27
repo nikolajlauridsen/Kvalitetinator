@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Application\Controller.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Domain\CustomerRepo.cs" />
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Domain\OrderRepo.cs" />
     <Compile Include="Domain\Product.cs" />
