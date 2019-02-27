@@ -13,7 +13,7 @@ namespace SalesLib.Model
         string Address { get; }   
         string Zip { get; }
         string Town { get; }
-        int CustomerID { get; }
+        int CustomerID { get; set; }
 
     }
 }
