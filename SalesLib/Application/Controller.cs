@@ -12,7 +12,7 @@ namespace SalesLib.Application
     {
         OrderRepo orderRepo = new OrderRepo();
         ProductRepo productRepo = new ProductRepo();
-        //CustomerRepo customerRepo = new CustomerRepo();
+        CustomerRepo customerRepo = new CustomerRepo();
 
         public bool CreateCustomer(string name, string adress, string zip, string town, string telephone)
         {
