@@ -9,7 +9,7 @@ namespace SalesLib.Domain
 {
     public class ProductRepo
     {
-        private IDB db = new FakeDB();
+        private IDB db = FakeDB.Instance;
         public Product GetProduct(int Id)
         {
             throw new NotImplementedException();

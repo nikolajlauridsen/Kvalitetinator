@@ -16,5 +16,7 @@ namespace SalesLib.Model
         Boolean Picked { get; }
 
         List<IProductLineSaleItem> GetProductLineSaleItems();
+
+        void AddProductLineSaleItem(IProduct product, int quantity);
     }
 }

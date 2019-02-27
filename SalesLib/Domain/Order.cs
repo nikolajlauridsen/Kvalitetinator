@@ -41,9 +41,10 @@ namespace SalesLib.Domain
             return items;
         }
 
-        public void AddProductLineSaleItem(IProductLineSaleItem productLineSaleItem)
+        public void AddProductLineSaleItem(IProduct product, int quantity)
         {
-            ProductItems.Add(productLineSaleItem);
+            IProductLineSaleItem item = new ProductSaleLineItem(product, quantity, 1);
+            ProductItems.Add(item);
         }
     }
 }

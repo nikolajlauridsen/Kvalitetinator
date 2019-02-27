@@ -105,6 +105,11 @@ namespace SalesLib.Persistence
             return null;
         }
 
+        public void AddSaleLineItem(IOrder order, IProductLineSaleItem lineSaleItem)
+        {
+            
+        }
+
        
     }
 

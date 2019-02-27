@@ -16,21 +16,21 @@ namespace SalesLib.Application
 
         public bool CreateCustomer(string name, string adress, string zip, string town, string telephone)
         {
-            bool customerCreated = true;    // remove
-            return customerCreated;         // remove
+           return customerRepo.CreateCustomer(name, adress, zip, town, telephone);
         }
 
         public void CreateOrder(string telephone, DateTime deliverydate)
         {
-
+            orderRepo.CreateOrder(customerRepo.GetCustomer(telephone), deliverydate);
         }
         public void ActivateOrder(int orderId)
         {
-
+            orderRepo.ActivateOrder(orderId);
         }
 
         public void AddSaleOrderItem(IOrder order, int productId, int quantity)
         {
+            order.AddProductLineSaleItem(productRepo.GetProduct(productId),quantity);
 
         }
     }

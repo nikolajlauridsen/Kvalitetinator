@@ -15,11 +15,11 @@ namespace SalesLib.Domain
         public double Price { get; private set; }
         public int LineID { get; }
 
-        public ProductSaleLineItem(IProduct product, int quantity, double price, int lineID)
+        public ProductSaleLineItem(IProduct product, int quantity, int lineID)
         {
             Product = product;
             Quantity = quantity;
-            Price = price;
+            Price = Product.Price;
             LineID = lineID;
         }
 
