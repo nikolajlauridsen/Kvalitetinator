@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Kvalitetinator"
         mc:Ignorable="d"
         Title="Kvalitetinator" Height="450" Width="690.157">
-    <WrapPanel>
+    <DockPanel>
         <ListView HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="518" Margin="10,10,0,0">
             <ListView.View>
                 <GridView>
@@ -27,5 +27,5 @@
             <Button Content="Add customer" Margin="10" Name="AddCustomerBtn"></Button>
             <Button Content="View order" Margin="10" Name="ViewOrderBtn"></Button>
         </StackPanel>
-    </WrapPanel>
+    </DockPanel>
 </Window>
