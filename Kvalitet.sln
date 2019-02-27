@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kvalitet", "Kvalitet\Kvalit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesLib", "SalesLib\SalesLib.csproj", "{2944FEF4-9004-4225-ADB1-78F55B2635E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kvalitetinator", "Kvalitetinator\Kvalitetinator.csproj", "{EF929C0D-8271-46D3-A759-DD0DA528EC3D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2944FEF4-9004-4225-ADB1-78F55B2635E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2944FEF4-9004-4225-ADB1-78F55B2635E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2944FEF4-9004-4225-ADB1-78F55B2635E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF929C0D-8271-46D3-A759-DD0DA528EC3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF929C0D-8271-46D3-A759-DD0DA528EC3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF929C0D-8271-46D3-A759-DD0DA528EC3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF929C0D-8271-46D3-A759-DD0DA528EC3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
