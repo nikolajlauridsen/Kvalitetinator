@@ -24,5 +24,15 @@ namespace SalesLib.Domain
         {
             db.ActivateOrder(orderID);
         }
+
+        public List<IOrder> GetActiveOrders()
+        {
+            return db.GetActiveOrders();
+        }
+
+        public List<IOrder> GetInactiveOrders()
+        {
+            return db.GetInactiveOrders();
+        }
     }
 }
