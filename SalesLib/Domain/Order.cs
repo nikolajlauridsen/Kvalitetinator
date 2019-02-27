@@ -7,7 +7,7 @@ using SalesLib.Model;
 
 namespace SalesLib.Domain
 {
-    class Order : IOrder
+    public class Order : IOrder
     {
         public ICustomer Customer { get; }
 

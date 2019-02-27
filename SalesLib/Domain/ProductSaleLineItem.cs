@@ -8,7 +8,7 @@ using SalesLib.Model;
 
 namespace SalesLib.Domain
 {
-    class ProductSaleLineItem : IProductLineSaleItem
+    public class ProductSaleLineItem : IProductLineSaleItem
     {
         public IProduct Product { get; }
         public int Quantity { get; }
