@@ -11,9 +11,30 @@ namespace SalesLib.Persistence
 {
     public class FakeDB : IDB
     {
+        private static IDB _instance;
+        public static IDB Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new FakeDB();
+                }
+
+                return _instance;
+            }
+        }
+
+        private FakeDB()
+        {
+
+        }
+
         private List<IOrder> activeOrders;
         private List<IOrder> inactiveOrders;
         private List<ICustomer> customers;
+
+        IDB IDB.Instance => Instance;
 
         public int CreateCustomer(ICustomer customer)
         {
@@ -60,6 +81,17 @@ namespace SalesLib.Persistence
             return null;
         }
 
+        public ICustomer GetCustomer(string telephone)
+        {
+            foreach (ICustomer customer in customers) {
+                if (customer.Telephone.Equals(telephone)) {
+                    return customer;
+                }
+            }
+
+            return null;
+        }
+
         public ICustomer GetCustomer(int customerID)
         {
             foreach (ICustomer customer in customers)
@@ -72,5 +104,8 @@ namespace SalesLib.Persistence
 
             return null;
         }
+
+       
     }
+
 }
