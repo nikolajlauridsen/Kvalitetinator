@@ -5,10 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kvalitetinator"
         mc:Ignorable="d"
-        Title="Kvalitetinator" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="639,150,0,0"/>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="639,190,0,0"/>
+        Title="Kvalitetinator" Height="450" Width="690.157">
+    <WrapPanel>
         <ListView HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="518" Margin="10,10,0,0">
             <ListView.View>
                 <GridView>
@@ -18,7 +16,16 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <RadioButton Name="ActiveOrder" Content="Activate" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        
+        <StackPanel>
+            <WrapPanel Margin="10">
+                <RadioButton Content="Active" Name="ActiveRadio" Margin="0,0,10,0"></RadioButton>
+                <RadioButton Content="Inactive" Name="InactiveRadio"></RadioButton>
+            </WrapPanel>
 
-    </Grid>
+            <Button Content="Add order" Margin="10" Name="AddOrderBtn"></Button>
+            <Button Content="Add customer" Margin="10" Name="AddCustomerBtn"></Button>
+            <Button Content="View order" Margin="10" Name="ViewOrderBtn"></Button>
+        </StackPanel>
+    </WrapPanel>
 </Window>
