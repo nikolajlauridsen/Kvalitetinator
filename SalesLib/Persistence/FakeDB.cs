@@ -30,9 +30,9 @@ namespace SalesLib.Persistence
 
         }
 
-        private List<IOrder> activeOrders;
-        private List<IOrder> inactiveOrders;
-        private List<ICustomer> customers;
+        private readonly List<IOrder> activeOrders = new List<IOrder>();
+        private readonly List<IOrder> inactiveOrders = new List<IOrder>();
+        private readonly List<ICustomer> customers = new List<ICustomer>();
 
         IDB IDB.Instance => Instance;
 
