@@ -39,9 +39,9 @@ namespace SalesLib.Application
            return customerRepo.CreateCustomer(name, adress, zip, town, telephone);
         }
 
-        public void CreateOrder(string telephone, DateTime deliverydate)
+        public int CreateOrder(string telephone, DateTime deliverydate)
         {
-            orderRepo.CreateOrder(customerRepo.GetCustomer(telephone), deliverydate);
+            return orderRepo.CreateOrder(customerRepo.GetCustomer(telephone), deliverydate);
         }
         public void ActivateOrder(int orderId)
         {
