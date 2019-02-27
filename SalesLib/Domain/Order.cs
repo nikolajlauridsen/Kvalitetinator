@@ -21,10 +21,11 @@ namespace SalesLib.Domain
 
         public bool Picked { get; }
 
-        public Order(ICustomer customer, DateTime deliveryDate)
+        public Order(ICustomer customer, DateTime deliveryDate, int orderID)
         {
             Customer = customer;
-            deliveryDate = DeliveryDate;
+            DeliveryDate = deliveryDate;
+            OrderID = orderID;
 
         }
 

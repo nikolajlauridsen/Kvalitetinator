@@ -51,6 +51,8 @@
     <Compile Include="Model\IOrder.cs" />
     <Compile Include="Model\IProduct.cs" />
     <Compile Include="Model\IProductLineSaleItem.cs" />
+    <Compile Include="Persistence\FakeDB.cs" />
+    <Compile Include="Persistence\IDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
