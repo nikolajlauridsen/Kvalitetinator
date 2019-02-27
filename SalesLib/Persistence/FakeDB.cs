@@ -33,6 +33,7 @@ namespace SalesLib.Persistence
         private readonly List<IOrder> activeOrders = new List<IOrder>();
         private readonly List<IOrder> inactiveOrders = new List<IOrder>();
         private readonly List<ICustomer> customers = new List<ICustomer>();
+        private readonly List<IProduct> products = new List<IProduct>();
 
         IDB IDB.Instance => Instance;
 
@@ -42,6 +43,11 @@ namespace SalesLib.Persistence
             ICustomer _customer = new Customer(customer.Name, customer.Telephone, customer.Zip, customer.Address, customer.Town, id);
             customers.Add(_customer);
             return id;
+        }
+
+        public void CreateProduct(IProduct product)
+        {
+            products.Add(product);
         }
 
         public int CreateOrder(IOrder order)
