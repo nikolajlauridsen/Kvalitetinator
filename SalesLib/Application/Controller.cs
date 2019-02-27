@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SalesLib.Model;
+using SalesLib.Domain;
 
 namespace SalesLib.Application
 {
     public class Controller
     {
-        
+
         public bool CreateCustomer(string name, string adress, string zip, string town, string telephone)
         {
             bool customerCreated = true;    // remove
