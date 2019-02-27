@@ -47,6 +47,7 @@
     <Compile Include="Domain\OrderRepo.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Domain\Customer.cs" />
+    <Compile Include="Domain\ProductRepo.cs" />
     <Compile Include="Domain\ProductSaleLineItem.cs" />
     <Compile Include="Model\ICustomer.cs" />
     <Compile Include="Model\IOrder.cs" />

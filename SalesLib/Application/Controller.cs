@@ -10,6 +10,9 @@ namespace SalesLib.Application
 {
     public class Controller
     {
+        OrderRepo orderRepo = new OrderRepo();
+        ProductRepo productRepo = new ProductRepo();
+        //CustomerRepo customerRepo = new CustomerRepo();
 
         public bool CreateCustomer(string name, string adress, string zip, string town, string telephone)
         {
