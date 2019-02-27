@@ -17,7 +17,7 @@ namespace SalesLib.Domain
 
         private List<IProductLineSaleItem> ProductItems { get; }
 
-        public int OrderID { get; }
+        public int OrderID { get; set; }
 
         public bool Picked { get; }
 
@@ -26,7 +26,10 @@ namespace SalesLib.Domain
             Customer = customer;
             DeliveryDate = deliveryDate;
             OrderID = orderID;
+        }
 
+        public Order(ICustomer customer, DateTime deliveryDate) : this(customer, deliveryDate, -1)
+        {
         }
 
         public List<IProductLineSaleItem> GetProductLineSaleItems()

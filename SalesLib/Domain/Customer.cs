@@ -19,7 +19,7 @@ namespace SalesLib.Domain
 
         public string Town { get; }
 
-        public int CustomerID { get; }
+        public int CustomerID { get; set; }
 
         public Customer(string name, string telephone, string zip, string address, string town, int customerID)
         {

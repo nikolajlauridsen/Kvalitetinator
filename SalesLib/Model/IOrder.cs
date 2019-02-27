@@ -12,7 +12,7 @@ namespace SalesLib.Model
         DateTime DeliveryDate { get; }
         DateTime OrderDate { get; }
 
-        int OrderID { get; }
+        int OrderID { get; set; }
         Boolean Picked { get; }
 
         List<IProductLineSaleItem> GetProductLineSaleItems();
