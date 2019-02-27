@@ -81,6 +81,17 @@ namespace SalesLib.Persistence
             return null;
         }
 
+        public ICustomer GetCustomer(string telephone)
+        {
+            foreach (ICustomer customer in customers) {
+                if (customer.Telephone.Equals(telephone)) {
+                    return customer;
+                }
+            }
+
+            return null;
+        }
+
         public ICustomer GetCustomer(int customerID)
         {
             foreach (ICustomer customer in customers)
@@ -93,5 +104,8 @@ namespace SalesLib.Persistence
 
             return null;
         }
+
+       
     }
+
 }
