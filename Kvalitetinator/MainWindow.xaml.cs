@@ -38,16 +38,17 @@ namespace Kvalitetinator
 
             ActiveRadio.Checked += LoadActiveOrders;
             InactiveRadio.Checked += LoadInactiveOrders;
+            AddOrderBtn.Click += ShowCreateOrder;
+
+            ActiveRadio.IsChecked = true;
 
         }
 
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void ShowCreateOrder(object sender, EventArgs e)
         {
-
+            CreateOrderWindow orderWindow = new CreateOrderWindow();
+            orderWindow.Show();
         }
 
         private void LoadActiveOrders(object sender, EventArgs e)
