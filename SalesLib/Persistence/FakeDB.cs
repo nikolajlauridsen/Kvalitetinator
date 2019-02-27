@@ -9,7 +9,7 @@ using SalesLib.Model;
 
 namespace SalesLib.Persistence
 {
-    class FakeDB : IDB
+    public class FakeDB : IDB
     {
         private List<IOrder> activeOrders;
         private List<IOrder> inactiveOrders;
