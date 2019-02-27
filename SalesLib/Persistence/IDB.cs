@@ -12,6 +12,7 @@ namespace SalesLib.Persistence
         IDB Instance { get;}
         int CreateCustomer(ICustomer customer);
         int CreateOrder(IOrder order);
+        void CreateProduct(IProduct product);
 
         void ActivateOrder(int orderID);
 
