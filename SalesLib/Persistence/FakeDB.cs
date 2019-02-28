@@ -63,6 +63,7 @@ namespace SalesLib.Persistence
         {
             IOrder targetOrder = GetInactiveOrder(orderID);
             inactiveOrders.Remove(targetOrder);
+            targetOrder.OrderID = activeOrders.Count;
             activeOrders.Add(targetOrder);
         }
 

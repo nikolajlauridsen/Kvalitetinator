@@ -40,6 +40,7 @@ namespace Kvalitetinator
             }
 
             AddProductBtn.Click += AddProduct;
+            ActivateBtn.Click += ActivateOrder;
         }
 
         public void AddProduct(object sender, EventArgs e)
@@ -51,6 +52,12 @@ namespace Kvalitetinator
 
             IProduct selectedProduct = Controller.Instance.GetProduct(productID);
             ProductLines.Items.Add(new ProductMock(selectedProduct.Name, quantity));
+        }
+
+        public void ActivateOrder(object sender, EventArgs e)
+        {
+            Controller.Instance.ActivateOrder(_order.OrderID);
+            this.Close();
         }
 
         private class ProductMock
