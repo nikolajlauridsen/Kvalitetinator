@@ -5,20 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kvalitetinator"
         mc:Ignorable="d"
-        Title="Fill Order" Height="450" Width="800">
+        Title="Fill Order" Height="440" Width="900">
+
     <DockPanel>
-        <WrapPanel>
-            <ListView Width="250" Height="350" Margin="10">
+        <!--Available products list and button-->
+        <StackPanel DockPanel.Dock="Left">
+            <ListView Width="250" Height="350" Margin="10" Name="AvailableProducts">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Product" Width="250" DisplayMemberBinding="{Binding Name}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
+            <!-- Quantity and button -->
+            <WrapPanel>
+                <Label>Quantity</Label>
+                <TextBox Name="Quantity" Width="100" Height="20" Margin="10,0,10,0">1</TextBox>
+                <Button Content="Add product" Height="20"></Button>
+            </WrapPanel>
+        </StackPanel>
+        
+        <!-- Added products -->
+        <StackPanel>
+        <ListView Height="350" Margin="10" Name="ProductLines">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Product" Width="250" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
+                    <GridViewColumn Header="Quantity" Width="100" DisplayMemberBinding="{Binding Quantity}"></GridViewColumn>
 
-            <StackPanel Margin="10">
-                <Label Content="Order lines"></Label>
-            </StackPanel>
-        </WrapPanel>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        </StackPanel>
+        
+        <!-- Order information -->
+        <StackPanel>
+            <WrapPanel Margin="10,10,10,0">
+                <Label>Customer: </Label>
+                <Label Name="CustomerLabel">John Doe</Label>
+            </WrapPanel>
+
+            <WrapPanel Margin="10,5,10,0">
+                <Label>Order date: </Label>
+                <Label Name="OrderDateLabel">19-1-18</Label>
+            </WrapPanel>
+
+            <WrapPanel Margin="10,5,10,0">
+                <Label>Delivery date:</Label>
+                <Label Name="DeliveryDateLabel">19-1-18</Label>
+            </WrapPanel>
+
+            <Button Width="100" Margin="0,270">Activate order</Button>
+        </StackPanel>
     </DockPanel>
 </Window>
