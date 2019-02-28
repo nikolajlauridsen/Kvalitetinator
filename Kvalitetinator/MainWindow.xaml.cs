@@ -62,6 +62,11 @@ namespace Kvalitetinator
                 OrderList.Items.Add(new OrderItem(order.OrderID, order.Customer.Name, order.DeliveryDate.ToShortDateString()));
             }
         }
+        private void AddCustomerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddCustomerWindow addCustomer = new AddCustomerWindow();
+            addCustomer.Show();
+        }
     }
 
     public class OrderItem

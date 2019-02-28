@@ -24,7 +24,7 @@
             </WrapPanel>
 
             <Button Content="Add order" Margin="10" Name="AddOrderBtn"></Button>
-            <Button Content="Add customer" Margin="10" Name="AddCustomerBtn"></Button>
+            <Button Content="Add customer" Margin="10" Name="AddCustomerBtn" Click="AddCustomerBtn_Click"></Button>
             <Button Content="View order" Margin="10" Name="ViewOrderBtn"></Button>
         </StackPanel>
     </DockPanel>
