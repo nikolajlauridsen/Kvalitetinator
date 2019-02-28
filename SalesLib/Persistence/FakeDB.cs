@@ -27,7 +27,8 @@ namespace SalesLib.Persistence
 
         private FakeDB()
         {
-
+            Customer c1 = new Customer("Nikolaj", "88888888", "7000", "Omegalul 3", "Fredericia", 1);
+            customers.Add(c1);
         }
 
         private readonly List<IOrder> activeOrders = new List<IOrder>();
@@ -52,7 +53,7 @@ namespace SalesLib.Persistence
 
         public int CreateOrder(IOrder order)
         {
-            int id = inactiveOrders[inactiveOrders.Count - 1].OrderID - 1;
+            int id = inactiveOrders.Count;
             IOrder _order = new Order(order.Customer, order.DeliveryDate, id);
             inactiveOrders.Add(_order);
             return id;

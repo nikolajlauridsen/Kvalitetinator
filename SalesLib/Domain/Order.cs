@@ -25,6 +25,7 @@ namespace SalesLib.Domain
         {
             Customer = customer;
             DeliveryDate = deliveryDate;
+            OrderDate = DateTime.Now;
             OrderID = orderID;
         }
 

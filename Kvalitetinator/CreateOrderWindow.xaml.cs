@@ -25,6 +25,7 @@ namespace Kvalitetinator
         public CreateOrderWindow()
         {
             InitializeComponent();
+            CreateBtn.Click += CreateInactiveOrder;
         }
 
         private void CreateInactiveOrder(object sender, EventArgs e)
@@ -34,6 +35,8 @@ namespace Kvalitetinator
             if (deliveryDate != null)
             {
                 int orderID = Controller.Instance.CreateOrder(phone, (DateTime)deliveryDate);
+                FillOrder orderWindow = new FillOrder(Controller.Instance.GetInactiveOrder(orderID));
+                orderWindow.Show();
             }
         }
     }
