@@ -26,5 +26,15 @@ namespace Kvalitetinator
         {
             InitializeComponent();
         }
+
+        private void CreateInactiveOrder(object sender, EventArgs e)
+        {
+            DateTime? deliveryDate = DeliveryDate.SelectedDate;
+            string phone = PhoneEntry.Text;
+            if (deliveryDate != null)
+            {
+                int orderID = Controller.Instance.CreateOrder(phone, (DateTime)deliveryDate);
+            }
+        }
     }
 }

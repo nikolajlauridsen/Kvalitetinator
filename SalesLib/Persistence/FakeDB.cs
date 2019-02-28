@@ -108,6 +108,24 @@ namespace SalesLib.Persistence
             return null;
         }
 
+        public IProduct GetProduct(int productID)
+        {
+            foreach (IProduct product in products)
+            {
+                if (product.ProductID == productID)
+                {
+                    return product;
+                }
+            }
+
+            return null;
+        }
+
+        public List<IProduct> GetProducts()
+        {
+            return products;
+        }
+
         public ICustomer GetCustomer(int customerID)
         {
             foreach (ICustomer customer in customers)

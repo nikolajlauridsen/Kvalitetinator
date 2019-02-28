@@ -23,6 +23,9 @@ namespace SalesLib.Persistence
         ICustomer GetCustomer(int customerID);
         ICustomer GetCustomer(string telephone);
 
+        IProduct GetProduct(int productID);
+        List<IProduct> GetProducts();
+
         void AddSaleLineItem(IOrder order, IProductLineSaleItem saleLineItem);
 
     }

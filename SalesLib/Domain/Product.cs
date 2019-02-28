@@ -17,12 +17,15 @@ namespace SalesLib.Domain
 
         public int MinInStock { get; }
 
-        public Product(string name, string description, double price, int minInStock)
+        public int ProductID { get; }
+
+        public Product(string name, string description, double price, int minInStock, int ID)
         {
             Name = name;
             Description = description;
             Price = price;
             MinInStock = minInStock;
+            ProductID = ID;
         }
     }
 }
