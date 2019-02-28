@@ -29,5 +29,13 @@ namespace SalesLib.Domain
         {
             return db.GetCustomer(telephone);
         }
+
+        public CustomerRepo()
+        {
+            CreateCustomer("JImbob Johnson", "Redneck Road", "7193", "Valleyville", "888-Probably-Real");
+            CreateCustomer("Peter Phile", "Kindergarten Way", "8293", "Fiddleville", "28938293");
+            CreateCustomer("Blue Powerranger", "Fluteville", "8473", "Voltronia", "865-Save-Our-Souls");
+            CreateCustomer("Nidolaj L-Dog", "Oscar Ave.", "8931", "Pelle Pellested", "+45 16171819");
+        }
     }
 }
