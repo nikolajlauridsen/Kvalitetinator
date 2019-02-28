@@ -10,7 +10,7 @@
         <ListView HorizontalAlignment="Left" Height="400" VerticalAlignment="Top" Width="518" Margin="10,10,0,0" Name="OrderList">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="OrderId" Width="150" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="OrderId" Width="150" DisplayMemberBinding="{Binding OrderID}"/>
                     <GridViewColumn Header="Customer" Width="150" DisplayMemberBinding="{Binding Customer}"/>
                     <GridViewColumn Header="Delivery" Width="150" DisplayMemberBinding="{Binding Delivery}"/>
                 </GridView>
