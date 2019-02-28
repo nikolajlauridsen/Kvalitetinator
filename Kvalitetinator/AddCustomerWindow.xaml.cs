@@ -40,7 +40,7 @@ namespace Kvalitetinator
             string zip = ZipTxt.Text;
             string town = TownTxt.Text;
 
-            Controller.Instance.CreateCustomer(name,phone,adress,zip,town);
+            Controller.Instance.CreateCustomer(name, adress, zip, town, phone);
             MessageBox.Show("Customer Created");
             NameTxt.Text = "";
             PhoneTxt.Text = "";
