@@ -43,7 +43,7 @@ namespace Kvalitetinator
 
         private void ShowCreateOrder(object sender, EventArgs e)
         {
-            CreateOrderWindow orderWindow = new CreateOrderWindow();
+            CreateOrderWindow orderWindow = new CreateOrderWindow(RefreshList);
             orderWindow.Show();
         }
 
@@ -62,6 +62,19 @@ namespace Kvalitetinator
                 OrderList.Items.Add(new OrderItem(order.OrderID, order.Customer.Name, order.DeliveryDate.ToShortDateString()));
             }
         }
+
+        private void RefreshList(object sender, EventArgs e)
+        {
+            if (ActiveRadio.IsChecked != null && (bool)ActiveRadio.IsChecked)
+            {
+                LoadActiveOrders(null, null);
+            }
+            else
+            {
+                LoadInactiveOrders(null, null);
+            }
+        }
+
         private void AddCustomerBtn_Click(object sender, RoutedEventArgs e)
         {
             AddCustomerWindow addCustomer = new AddCustomerWindow();

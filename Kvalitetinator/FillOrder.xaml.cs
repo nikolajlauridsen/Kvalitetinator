@@ -23,11 +23,12 @@ namespace Kvalitetinator
     public partial class FillOrder : Window
     {
         private IOrder _order;
+        private EventHandler _refresh;
 
-        public FillOrder(IOrder order)
+        public FillOrder(IOrder order, EventHandler refreshHandler)
         {
             InitializeComponent();
-
+            _refresh = refreshHandler;
             _order = order;
 
             DeliveryDateLabel.Content = _order.DeliveryDate.ToShortDateString();
@@ -57,6 +58,7 @@ namespace Kvalitetinator
         public void ActivateOrder(object sender, EventArgs e)
         {
             Controller.Instance.ActivateOrder(_order.OrderID);
+            _refresh(this, null);
             this.Close();
         }
 

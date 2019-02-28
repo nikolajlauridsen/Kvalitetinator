@@ -22,9 +22,11 @@ namespace Kvalitetinator
     /// </summary>
     public partial class CreateOrderWindow : Window
     {
-        public CreateOrderWindow()
+        private EventHandler _refresh;
+        public CreateOrderWindow(EventHandler refreshHandler)
         {
             InitializeComponent();
+            _refresh = refreshHandler;
             CreateBtn.Click += CreateInactiveOrder;
         }
 
@@ -37,7 +39,8 @@ namespace Kvalitetinator
                 if (deliveryDate != null)
                 {
                     int orderID = Controller.Instance.CreateOrder(phone, (DateTime) deliveryDate);
-                    FillOrder orderWindow = new FillOrder(Controller.Instance.GetInactiveOrder(orderID));
+                    FillOrder orderWindow = new FillOrder(Controller.Instance.GetInactiveOrder(orderID), _refresh);
+                    _refresh(this, null);
                     orderWindow.Show();
                     this.Close();
                 }
