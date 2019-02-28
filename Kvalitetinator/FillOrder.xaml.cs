@@ -50,13 +50,19 @@ namespace Kvalitetinator
             Controller.Instance.AddSaleOrderItem(_order, productID, quantity);
 
             IProduct selectedProduct = Controller.Instance.GetProduct(productID);
-            ProductLines.Items.Add(new ProductMock {Name = selectedProduct.Name, Quantity = quantity});
+            ProductLines.Items.Add(new ProductMock(selectedProduct.Name, quantity));
         }
 
         private class ProductMock
         {
-            public string Name;
-            public int Quantity;
+            public string Name { get; }
+            public string Quantity { get; }
+
+            public ProductMock(string name, int quantity)
+            {
+                Name = name;
+                Quantity = quantity.ToString();
+            }
         }
     }
 }

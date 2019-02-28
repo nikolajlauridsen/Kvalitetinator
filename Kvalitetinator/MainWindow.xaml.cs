@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using SalesLib.Application;
+using SalesLib.Domain;
 using SalesLib.Model;
 
 namespace Kvalitetinator
@@ -28,12 +29,7 @@ namespace Kvalitetinator
             InitializeComponent();
             foreach (IOrder order in Controller.Instance.GetActiveOrders())
             {
-                OrderList.Items.Add(new OrderItem
-                {
-                    OrderID = order.OrderID.ToString(),
-                    Customer = order.Customer.Name,
-                    Delivery = order.DeliveryDate.ToString()
-                });
+                OrderList.Items.Add(new OrderItem(order.OrderID, order.Customer.Name, order.DeliveryDate.ToShortDateString()));
             }
 
             ActiveRadio.Checked += LoadActiveOrders;
@@ -55,11 +51,7 @@ namespace Kvalitetinator
         {
             OrderList.Items.Clear();
             foreach (IOrder order in Controller.Instance.GetActiveOrders()) {
-                OrderList.Items.Add(new OrderItem {
-                    OrderID = order.OrderID.ToString(),
-                    Customer = order.Customer.Name,
-                    Delivery = order.DeliveryDate.ToString()
-                });
+                OrderList.Items.Add(new OrderItem(order.OrderID, order.Customer.Name, order.DeliveryDate.ToShortDateString()));
             }
         }
 
@@ -67,19 +59,22 @@ namespace Kvalitetinator
         {
             OrderList.Items.Clear();
             foreach (IOrder order in Controller.Instance.GetInactiveOrders()) {
-                OrderList.Items.Add(new OrderItem {
-                    OrderID = order.OrderID.ToString(),
-                    Customer = order.Customer.Name,
-                    Delivery = order.DeliveryDate.ToString()
-                });
+                OrderList.Items.Add(new OrderItem(order.OrderID, order.Customer.Name, order.DeliveryDate.ToShortDateString()));
             }
         }
     }
 
     public class OrderItem
     {
-        public string OrderID;
-        public string Customer;
-        public string Delivery;
+        public string OrderID { get; }
+        public string Customer { get; }
+        public string Delivery { get; }
+
+        public OrderItem(int orderID, string customer, string delivery)
+        {
+            OrderID = orderID.ToString();
+            Customer = customer;
+            Delivery = delivery;
+        }
     }
 }
