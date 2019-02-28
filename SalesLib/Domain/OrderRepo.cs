@@ -29,10 +29,14 @@ namespace SalesLib.Domain
         {
             return db.GetActiveOrders();
         }
-
+ 
         public List<IOrder> GetInactiveOrders()
         {
             return db.GetInactiveOrders();
+        }
+        public IOrder GetInactiveOrder(int id)
+        {
+            return db.GetInactiveOrder(id);
         }
     }
 }

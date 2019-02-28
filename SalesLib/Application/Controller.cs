@@ -63,5 +63,10 @@ namespace SalesLib.Application
         {
             return orderRepo.GetInactiveOrders();
         }
+
+        public IOrder GetInactiveOrder(int orderID)
+        {
+            return orderRepo.GetInactiveOrder(orderID);
+        }
     }
 }
