@@ -38,6 +38,25 @@ namespace Kvalitetinator
             {
                 AvailableProducts.Items.Add(product);
             }
+
+            AddProductBtn.Click += AddProduct;
+        }
+
+        public void AddProduct(object sender, EventArgs e)
+        {
+            dynamic item = AvailableProducts.SelectedItem as dynamic;
+            int productID = item.ProductID;
+            int quantity = int.Parse(Quantity.Text);
+            Controller.Instance.AddSaleOrderItem(_order, productID, quantity);
+
+            IProduct selectedProduct = Controller.Instance.GetProduct(productID);
+            ProductLines.Items.Add(new ProductMock {Name = selectedProduct.Name, Quantity = quantity});
+        }
+
+        private class ProductMock
+        {
+            public string Name;
+            public int Quantity;
         }
     }
 }

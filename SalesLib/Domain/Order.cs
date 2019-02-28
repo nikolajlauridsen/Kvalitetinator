@@ -23,6 +23,7 @@ namespace SalesLib.Domain
 
         public Order(ICustomer customer, DateTime deliveryDate, int orderID)
         {
+            ProductItems = new List<IProductLineSaleItem>();
             Customer = customer;
             DeliveryDate = deliveryDate;
             OrderDate = DateTime.Now;

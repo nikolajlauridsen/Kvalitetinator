@@ -73,5 +73,10 @@ namespace SalesLib.Application
         {
             return productRepo.GetProducts();
         }
+
+        public IProduct GetProduct(int id)
+        {
+            return productRepo.GetProduct(id);
+        }
     }
 }
