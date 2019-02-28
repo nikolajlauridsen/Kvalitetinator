@@ -74,6 +74,11 @@ namespace Kvalitetinator
                 });
             }
         }
+        private void AddCustomerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddCustomerWindow addCustomer = new AddCustomerWindow();
+            addCustomer.Show();
+        }
     }
 
     public class OrderItem
