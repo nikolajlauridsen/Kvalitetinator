@@ -32,12 +32,21 @@ namespace Kvalitetinator
         {
             DateTime? deliveryDate = DeliveryDate.SelectedDate;
             string phone = PhoneEntry.Text;
-            if (deliveryDate != null)
+            try
             {
-                int orderID = Controller.Instance.CreateOrder(phone, (DateTime)deliveryDate);
-                FillOrder orderWindow = new FillOrder(Controller.Instance.GetInactiveOrder(orderID));
-                orderWindow.Show();
+                if (deliveryDate != null)
+                {
+                    int orderID = Controller.Instance.CreateOrder(phone, (DateTime) deliveryDate);
+                    FillOrder orderWindow = new FillOrder(Controller.Instance.GetInactiveOrder(orderID));
+                    orderWindow.Show();
+                    this.Close();
+                }
             }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Customer does not exist, please create the customer first");
+            }
+            
         }
     }
 }
