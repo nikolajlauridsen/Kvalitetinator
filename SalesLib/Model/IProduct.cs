@@ -12,5 +12,6 @@ namespace SalesLib.Model
         string Description { get; }
         double Price { get; }
         int MinInStock { get; }
+        int ProductID { get; }
     }
 }

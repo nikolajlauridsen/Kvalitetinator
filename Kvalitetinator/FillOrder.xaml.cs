@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using SalesLib.Application;
+using SalesLib.Model;
+
 namespace Kvalitetinator
 {
     /// <summary>
@@ -19,9 +22,22 @@ namespace Kvalitetinator
     /// </summary>
     public partial class FillOrder : Window
     {
-        public FillOrder()
+        private IOrder _order;
+
+        public FillOrder(IOrder order)
         {
             InitializeComponent();
+
+            _order = order;
+
+            DeliveryDateLabel.Content = _order.DeliveryDate.ToShortDateString();
+            OrderDateLabel.Content = _order.OrderDate.ToShortDateString();
+            CustomerLabel.Content = _order.Customer.Name;
+
+            foreach (IProduct product in Controller.Instance.GetProducts())
+            {
+                
+            }
         }
     }
 }

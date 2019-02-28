@@ -4,15 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SalesLib.Persistence;
+using SalesLib.Model;
 
 namespace SalesLib.Domain
 {
     public class ProductRepo
     {
         private IDB db = FakeDB.Instance;
-        public Product GetProduct(int Id)
+        public IProduct GetProduct(int Id)
         {
-            throw new NotImplementedException();
+            return db.GetProduct(Id);
+        }
+
+        public List<IProduct> GetProducts()
+        {
+            return db.GetProducts();
         }
     }
 }
