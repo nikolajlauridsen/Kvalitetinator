@@ -17,7 +17,7 @@
             <DatePicker Name="DeliveryDate"></DatePicker>
         </DockPanel>
         
-        <Button Content="Create order" Width="100"></Button>
+        <Button Content="Create order" Width="100" Name="CreateBtn"></Button>
 
     </StackPanel>
 </Window>

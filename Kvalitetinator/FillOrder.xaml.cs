@@ -36,7 +36,7 @@ namespace Kvalitetinator
 
             foreach (IProduct product in Controller.Instance.GetProducts())
             {
-                
+                AvailableProducts.Items.Add(product);
             }
         }
     }
