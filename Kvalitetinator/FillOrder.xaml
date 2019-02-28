@@ -21,7 +21,7 @@
             <WrapPanel>
                 <Label>Quantity</Label>
                 <TextBox Name="Quantity" Width="100" Height="20" Margin="10,0,10,0">1</TextBox>
-                <Button Content="Add product" Height="20"></Button>
+                <Button Content="Add product" Height="20" Name="AddProductBtn"></Button>
             </WrapPanel>
         </StackPanel>
         
@@ -55,7 +55,7 @@
                 <Label Name="DeliveryDateLabel">19-1-18</Label>
             </WrapPanel>
 
-            <Button Width="100" Margin="0,270">Activate order</Button>
+            <Button Width="100" Margin="0,270" Name="ActivateBtn">Activate order</Button>
         </StackPanel>
     </DockPanel>
 </Window>
